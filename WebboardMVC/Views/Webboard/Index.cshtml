@@ -17,7 +17,11 @@
              <tr>
                 <td>
                     <h4>
-                        @item.KratooTopic
+                        <a asp-controller="Webboard" 
+                            asp-action="KratooComments"
+                            asp-route-id="@item.Kid">
+                            @item.KratooTopic
+                         </a>
                     </h4>       
                     <div>
                         ผู้ตั้งกระทู้ : @item.UserName

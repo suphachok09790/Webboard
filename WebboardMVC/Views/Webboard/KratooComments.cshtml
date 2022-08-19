@@ -1,0 +1,53 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="card border-dark mt-3 mb-3">
+    <div class="card-header text-light bg-dark">
+        <h4 class="card-title">
+            @ViewBag.KratooCommentsViewModel.Kratoo.KratooTopic
+        </h4>
+    </div>
+    <div class="card-body">
+        <p class="card-text">
+            @ViewBag.KratooCommentsViewModel.Kratoo.KratooDetails
+        </p>
+    </div>
+    <div class="card-footer">
+        <div>
+            ผู้ตั้งกระทู้ : @ViewBag.KratooCommentsViewModel.Kratoo.UserName
+            ( หมายเลข IP : @ViewBag.KratooCommentsViewModel.Kratoo.UserIp) |
+            วันที่ตั้งกระทู้ : @ViewBag.KratooCommentsViewModel.Kratoo.RecordDate?.ToString("dd/MM/yyyy HH:mm")
+            <div class="float-end">
+                หมวด : @ViewBag.KratooCommentsViewModel.Kratoo.Category.CategoryName |
+                อ่าน : @ViewBag.KratooCommentsViewModel.Kratoo.ViewCount |
+                ตอบ : @ViewBag.KratooCommentsViewModel.Kratoo.ReplyCount
+            </div>
+        </div>
+    </div>
+</div>
+
+@foreach (var item in ViewBag.KratooCommentsViewModel.CommentsLists)
+{
+    <div class="card border-dark mb-3">
+        <div class="card-body">
+            <p class="card-text">
+                ความเห็นที่ @item.CommentNo
+            </p><hr />
+            <p class="card-text">
+                @item.Description
+            </p>
+        </div>
+        <div class="card-footer">
+            <div>
+                ผู้ตั้งกระทู้ : @item.UserName
+                ( หมายเลข IP : @item.UserIp) |
+                วันที่ตั้งกระทู้ : @item.ReplyDate?.ToString("dd/MM/yyyy HH:mm")
+            </div>
+        </div>
+    </div>
+}
+

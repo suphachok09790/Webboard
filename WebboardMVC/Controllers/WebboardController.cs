@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using WebboardMVC.Models.db;
+using WebboardMVC.ViewModels;
 
 namespace WebboardMVC.Controllers
 {
@@ -76,6 +77,60 @@ namespace WebboardMVC.Controllers
                 return NotFound();
             }
             return View("Index",await ks.ToListAsync());
+        }
+        public async Task<IActionResult> KratooComments(int id)
+        {
+            var kc = await _db.Kratoos
+                .Include(c => c.Category)
+                .Where(i => i.IsShow == true)
+                .FirstOrDefaultAsync(k => k.Kid == id);
+
+            if (kc ==null)
+            {
+                return NotFound();
+            }
+            if (id != kc.Kid)
+            {
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var viewcount = kc.ViewCount;
+                    viewcount++;
+                    kc.ViewCount = viewcount;
+
+                    _db.Update(kc);
+                    await _db.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    var result = _db.Kratoos.Any(k => k.Kid == id);
+                    if (result ==false)
+                    {
+                        return NotFound();
+                    }
+                }
+
+            }
+
+            IQueryable<Comment> cs = _db.Comments
+                .OrderBy(c => c.CommentNo)
+                .Where(i => i.IsShow == true)
+                .Where(j => j.Kid == id);
+
+            var viewmodel = new KratooCommentsViewModel()
+            {
+                Kratoo = kc,
+                CommentsLists = cs
+            };
+
+            ViewData["KratooCommentsViewModel"] = viewmodel;
+
+            return View();
+
+
         }
 
     }
