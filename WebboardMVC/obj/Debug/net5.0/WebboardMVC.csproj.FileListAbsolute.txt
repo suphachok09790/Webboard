@@ -144,3 +144,4 @@ D:\Learn programing\WebboardMVC\Webboard\WebboardMVC\obj\Debug\net5.0\refint\Web
 D:\Learn programing\WebboardMVC\Webboard\WebboardMVC\obj\Debug\net5.0\WebboardMVC.pdb
 D:\Learn programing\WebboardMVC\Webboard\WebboardMVC\obj\Debug\net5.0\WebboardMVC.genruntimeconfig.cache
 D:\Learn programing\WebboardMVC\Webboard\WebboardMVC\obj\Debug\net5.0\ref\WebboardMVC.dll
+D:\Learn programing\WebboardMVC\Webboard\WebboardMVC\obj\Debug\net5.0\Razor\Views\Shared\_KratoosSearch.cshtml.g.cs

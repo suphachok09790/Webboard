@@ -64,7 +64,19 @@ namespace WebboardMVC.Controllers
             }
             return View("Index", await ks.ToListAsync());
         }
-
+        public async Task<IActionResult> Search(string q)
+        {
+            var ks = _db.Kratoos
+                .OrderByDescending(k => k.RecordDate)
+                .Include(c => c.Category)
+                .Where(u => u.IsShow == true)
+                .Where(i => i.KratooTopic.Contains(q));
+            if (ks == null)
+            {
+                return NotFound();
+            }
+            return View("Index",await ks.ToListAsync());
+        }
 
     }
 }
