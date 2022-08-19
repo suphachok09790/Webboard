@@ -1,4 +1,4 @@
-﻿
+﻿@model Comment
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -50,4 +50,33 @@
         </div>
     </div>
 }
+
+<div class="alert alert-primary">
+    <h4>ตอบกระทู้</h4>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Webboard" asp-action="KratooComments" class="needs-validation">
+            <input type="hidden" asp-for="@Model.Kid"
+                    value="@ViewBag.KratooCommentsViewModel.Kratoo.Kid"/>
+
+            <div class="form-group">
+                <label asp-for="@Model.Description" class="control-label"></label>
+                <textarea asp-for="@Model.Description" rows="5" class="form-control"
+                           autocomplete="off" maxlength="255" required>
+                </textarea>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.UserName" class="control-label"></label>
+                <input asp-for="@Model.UserName" class="form-control"
+                        autocomplete="off" maxlength="50" required/>
+            </div>
+
+            <div class="form-group mt-2">
+                <input type="submit" value="ตอบกระทู้" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
 

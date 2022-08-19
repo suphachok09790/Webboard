@@ -129,8 +129,49 @@ namespace WebboardMVC.Controllers
             ViewData["KratooCommentsViewModel"] = viewmodel;
 
             return View();
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> KratooComments(Comment data)
+        {
+            if (ModelState.IsValid)
+            {
+                var cs = await _db.Comments
+                        .OrderByDescending(i => i.CommentNo)
+                        .Where(c => c.Kid == data.Kid)
+                        .FirstOrDefaultAsync();
 
+                int CurrentNo;
+                if (cs != null)
+                {
+                    CurrentNo = cs.CommentNo;
+                    CurrentNo++;
+
+                }
+                else
+                {
+                    CurrentNo = 1;
+                }
+                //เพิ่มข้อมูลที่ผู้ใช้ไม่สามารถอัพเองได้
+                data.CommentNo = CurrentNo;
+                data.ReplyDate = DateTime.Now;
+                data.UserIp = HttpContext.Connection.RemoteIpAddress.ToString();
+                data.IsShow = true;
+                _db.Add(data);
+
+                //update replycount
+                var ks = await _db.Kratoos.Where(k => k.Kid == data.Kid).FirstOrDefaultAsync();
+                var replycount = ks.ReplyCount;
+                replycount++;
+                ks.ReplyCount = replycount;
+                _db.Update(ks);
+
+                await _db.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+            }
+            return View(data);
         }
 
     }
