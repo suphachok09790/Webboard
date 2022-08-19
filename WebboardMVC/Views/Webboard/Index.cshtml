@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Kratoo>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <table class="table table-responsive table-striped">
+        <tbody>
+           @foreach (var item in Model)
+            {
+             <tr>
+                <td>
+                    <h4>
+                        @item.KratooTopic
+                    </h4>       
+                    <div>
+                        ผู้ตั้งกระทู้ : @item.UserName
+                        (IP : @item.UserIp) |
+                        วันที่ตั้งกระทู้ :@item.RecordDate?.ToString("dd/MM/yyyy HH:mm")
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        อ่าน : @item.ViewCount |
+                        ตอบ : @item.ReplyCount
+                    </div>
+                </td>
+                <td>@item.Category.CategoryName</td>
+             </tr>
+            }
+        </tbody>
+    </table>
+</div>

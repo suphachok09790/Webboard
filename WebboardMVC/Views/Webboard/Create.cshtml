@@ -1,0 +1,41 @@
+﻿@model Kratoo
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h4>กระทู้ใหม่</h4>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="KratooTopic" class="control-label"></label>
+                    <input asp-for="KratooTopic" class="form-control" />
+                    <span asp-validation-for="KratooTopic" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="KratooDetails" class="control-label"></label>
+                    <textarea asp-for="KratooDetails" rows="5" class="form-control"></textarea>
+                    <span asp-validation-for="KratooDetails" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CategoryId" class="control-label"></label>
+                    <select asp-for="CategoryId" class="form-control"
+                            asp-items="ViewBag.CategoriesLists">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label"></label>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div><hr />
+                <div class="form-group">
+                    <input type="submit" value="ตั้งกระทู้" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
