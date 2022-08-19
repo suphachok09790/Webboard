@@ -33,8 +33,15 @@ using WebboardMVC.Models.db;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "D:\Learn programing\WebboardMVC\Webboard\WebboardMVC\Views\_ViewImports.cshtml"
+using WebboardMVC.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8e97f76725844bb029ba714dc45f713d4ff7a051", @"/Views/Webboard/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5331ac1714db0bffed476631ea43db72c0f8df1c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e5322db0b4877c2d00aab928218f7a3bb4313632", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Webboard_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Kratoo>>
     #nullable disable
@@ -69,7 +76,7 @@ using WebboardMVC.Models.db;
         {
             WriteLiteral("\r\n");
             WriteLiteral("\r\n<div class=\"container\">\r\n    <div>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e97f76725844bb029ba714dc45f713d4ff7a0514682", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e97f76725844bb029ba714dc45f713d4ff7a0514872", async() => {
                 WriteLiteral("หน้ากระทู้รวม");
             }
             );
@@ -145,7 +152,7 @@ using WebboardMVC.Models.db;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                    </div>\r\n                </td>\r\n                <td>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e97f76725844bb029ba714dc45f713d4ff7a0518547", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e97f76725844bb029ba714dc45f713d4ff7a0518737", async() => {
                 WriteLiteral("\r\n                        ");
 #nullable restore
 #line 38 "D:\Learn programing\WebboardMVC\Webboard\WebboardMVC\Views\Webboard\Index.cshtml"

@@ -1,8 +1,61 @@
-﻿@{
+﻿@model MainIndexViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 m-2">
+    @foreach (var item in Model.CategoriesLists)
+   {
+       <div class="col">
+           <div class="card border-primary m-1">
+               <div class="card-body">
+                   <h4 class="card-title">
+                       <a asp-controller="Webboard" 
+                          asp-action="KratoosByCategoryId"
+                           asp-route-id="@item.CategoryId">
+                           @item.CategoryName
+                       </a>
+                   </h4>
+                   <p class="card-text">@item.Description</p>
+                </div>
+            </div>
+       </div>
+   }
+</div>
+<div class="container">
+    <h3>10 กระทู้ล่าสุด</h3>
+    <table class="table table-responsive table-striped">
+        <tbody>
+            @foreach (var item in Model.KraoosLists)
+           {
+               <tr>
+                   <td>
+                       <h4>
+                           @item.KratooTopic
+                       </h4>
+                       <div>
+                           ผู้ตั้งกระทู้ : @item.UserName
+                           (หมายเลข IP : @item.UserIp) |
+                           วันที่ : @item.RecordDate?.ToString("dd/MM/yyyy HH:mm")
+                       </div>
+                   </td>
+                   <td>
+                       <div>
+                           อ่าน : @item.ViewCount |
+                           ตอบ : @item.ReplyCount
+                       </div>
+                   </td>
+                   <td>
+                       <div>
+                           <a asp-controller="Webboard" 
+                              asp-action="KratoosByCategoryId"
+                              asp-route-id="@item.CategoryId">
+                              @item.Category.CategoryName
+                            </a>
+                       </div>
+                   </td>
+               </tr>
+           }
+        </tbody>
+    </table>
 </div>

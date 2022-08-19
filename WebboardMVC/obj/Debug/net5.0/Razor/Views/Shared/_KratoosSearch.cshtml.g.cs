@@ -33,8 +33,15 @@ using WebboardMVC.Models.db;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "D:\Learn programing\WebboardMVC\Webboard\WebboardMVC\Views\_ViewImports.cshtml"
+using WebboardMVC.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"94e94606a111c5e2e64844874fe4acdb8060e61c", @"/Views/Shared/_KratoosSearch.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5331ac1714db0bffed476631ea43db72c0f8df1c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e5322db0b4877c2d00aab928218f7a3bb4313632", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__KratoosSearch : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -67,7 +74,7 @@ using WebboardMVC.Models.db;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<div class=\"row justify-content-center align-itmes-center\">\r\n    <div class=\"col-lg-6\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94e94606a111c5e2e64844874fe4acdb8060e61c4209", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94e94606a111c5e2e64844874fe4acdb8060e61c4399", async() => {
                 WriteLiteral("\r\n            <div class=\"input-group\">\r\n                <input type=\"text\" name=\"q\" class=\"form-control\" me-1 placeholder=\"ค้นหากระทู้\" />\r\n                <button type=\"submit\" class=\"btn btn-success\">ค้นหากระทู้</button>\r\n            </div>\r\n        ");
             }
             );
