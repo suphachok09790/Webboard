@@ -52,6 +52,19 @@ namespace WebboardMVC.Controllers
 
         }
 
+        public async Task<IActionResult> KratoosByCategoryId(int id)
+        {
+            var ks = _db.Kratoos.OrderByDescending(k => k.RecordDate)
+                .Include(c => c.Category)
+                .Where(u => u.IsShow == true)
+                .Where(i => i.CategoryId == id);
+            if (ks == null)
+            {
+                return NotFound();
+            }
+            return View("Index", await ks.ToListAsync());
+        }
+
 
     }
 }

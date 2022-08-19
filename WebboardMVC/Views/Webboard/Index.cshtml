@@ -7,6 +7,9 @@
 }
 
 <div class="container">
+    <div>
+        <a asp-controller="Webboard" asp-action="Index" class="float-end">หน้ากระทู้รวม</a>
+    </div>
     <table class="table table-responsive table-striped">
         <tbody>
            @foreach (var item in Model)
@@ -28,7 +31,14 @@
                         ตอบ : @item.ReplyCount
                     </div>
                 </td>
-                <td>@item.Category.CategoryName</td>
+                <td>
+                    <a asp-controller="Webboard" 
+                        asp-action="KratoosByCategoryId"
+                        asp-route-id="@item.Category.CategoryId">
+                        @item.Category.CategoryName
+                    </a> 
+                </td>
+
              </tr>
             }
         </tbody>

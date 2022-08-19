@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Learn programing\\WebboardMVC\\WebboardMVC\\WebboardMVC.csproj": {}
+    "D:\\Learn programing\\WebboardMVC\\Webboard\\WebboardMVC\\WebboardMVC.csproj": {}
   },
   "projects": {
-    "D:\\Learn programing\\WebboardMVC\\WebboardMVC\\WebboardMVC.csproj": {
+    "D:\\Learn programing\\WebboardMVC\\Webboard\\WebboardMVC\\WebboardMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Learn programing\\WebboardMVC\\WebboardMVC\\WebboardMVC.csproj",
+        "projectUniqueName": "D:\\Learn programing\\WebboardMVC\\Webboard\\WebboardMVC\\WebboardMVC.csproj",
         "projectName": "WebboardMVC",
-        "projectPath": "D:\\Learn programing\\WebboardMVC\\WebboardMVC\\WebboardMVC.csproj",
+        "projectPath": "D:\\Learn programing\\WebboardMVC\\Webboard\\WebboardMVC\\WebboardMVC.csproj",
         "packagesPath": "C:\\Users\\supha\\.nuget\\packages\\",
-        "outputPath": "D:\\Learn programing\\WebboardMVC\\WebboardMVC\\obj\\",
+        "outputPath": "D:\\Learn programing\\WebboardMVC\\Webboard\\WebboardMVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\supha\\AppData\\Roaming\\NuGet\\NuGet.Config",
