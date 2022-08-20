@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebboardMVC.Models.db;
+using WebboardMVC.Services;
 
 namespace WebboardMVC
 {
@@ -27,6 +28,7 @@ namespace WebboardMVC
         {
             services.AddControllersWithViews();
             services.AddDbContext<thaivbWebboardContext>(option => option.UseSqlServer(Configuration.GetConnectionString("webboarddb")));
+            services.AddTransient<CommentsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,8 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Controllers"
+    ""
   ],
-  "SelectedNode": "\\Controllers\\WebboardController.cs",
+  "SelectedNode": "\\WebboardMVC.csproj",
   "PreviewInSolutionExplorer": false
 }

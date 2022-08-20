@@ -114,16 +114,9 @@ namespace WebboardMVC.Controllers
                 }
 
             }
-
-            IQueryable<Comment> cs = _db.Comments
-                .OrderBy(c => c.CommentNo)
-                .Where(i => i.IsShow == true)
-                .Where(j => j.Kid == id);
-
             var viewmodel = new KratooCommentsViewModel()
             {
-                Kratoo = kc,
-                CommentsLists = cs
+                Kratoo = kc              
             };
 
             ViewData["KratooCommentsViewModel"] = viewmodel;
